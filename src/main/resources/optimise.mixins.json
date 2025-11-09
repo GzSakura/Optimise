@@ -1,0 +1,19 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.example.optimise.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "client": [
+    "EntityRenderDispatcherMixin",
+    "ParticleManagerMixin",
+    "WorldRendererMixin",
+    "ClientWorldMixin",
+    "MinecraftClientMixin",
+    "InGameHudMixin"
+  ],
+  "mixins": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
