@@ -20,7 +20,7 @@ public class OptimiseConfigScreen extends Screen {
     private CyclingButtonWidget<Boolean> fpsOverlayButton;
     private CyclingButtonWidget<Boolean> smoothLightingButton;
     private TextFieldWidget renderDistanceField;
-    private CyclingButtonWidget<String> particleQualityButton;
+    private CyclingButtonWidget<Integer> particleQualityButton;
     
     public OptimiseConfigScreen(Screen parent) {
         super(Text.translatable("optimise.config.title"));

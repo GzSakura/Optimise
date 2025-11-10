@@ -10,6 +10,9 @@
   "optimise.config.smooth_lighting": "平滑光照",
   "optimise.config.render_distance": "渲染距离 (2-32):",
   "optimise.config.particle_quality": "粒子质量",
+  "optimise.config.particle_quality.minimal": "极简",
+  "optimise.config.particle_quality.decreased": "减少",
+  "optimise.config.particle_quality.all": "全部",
   "optimise.config.save": "保存配置",
   "optimise.config.back": "返回",
   
