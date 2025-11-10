@@ -9,4 +9,4 @@ pluginManagement {
     }
 }
 
-rootProject.name = 'performance-optimize'
+rootProject.name = 'optimise'

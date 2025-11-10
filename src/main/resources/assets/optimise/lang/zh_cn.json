@@ -1,0 +1,19 @@
+{
+  "key.categories.optimise": "Optimise Mod",
+  "key.optimise.open_config": "打开配置界面",
+  
+  "optimise.config.title": "Optimise Mod 配置",
+  "optimise.config.memory_optimizations": "内存优化",
+  "optimise.config.render_optimizations": "渲染优化", 
+  "optimise.config.entity_culling": "实体剔除",
+  "optimise.config.fps_overlay": "FPS显示",
+  "optimise.config.smooth_lighting": "平滑光照",
+  "optimise.config.render_distance": "渲染距离 (2-32):",
+  "optimise.config.particle_quality": "粒子质量",
+  "optimise.config.save": "保存配置",
+  "optimise.config.back": "返回",
+  
+  "optimise.messages.config_saved": "Optimise mod配置已保存",
+  "optimise.messages.gui_opened": "Optimise mod配置界面已打开",
+  "optimise.messages.invalid_render_distance": "无效的渲染距离值"
+}
