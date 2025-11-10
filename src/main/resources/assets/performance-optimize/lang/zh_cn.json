@@ -1,0 +1,25 @@
+{
+  "modmenu.nameTranslation.performance-optimize": "性能优化模组",
+  "modmenu.descriptionTranslation.performance-optimize": "Minecraft 1.21.1 全方面性能优化模组，支持GUI调试界面",
+  
+  "key.performance-optimize.open_gui": "打开性能设置界面",
+  "category.performance-optimize.general": "性能优化",
+  
+  "text.autoconfig.performance-optimize.title": "性能优化模组设置",
+  "text.autoconfig.performance-optimize.option.enabled": "启用模组",
+  "text.autoconfig.performance-optimize.option.optimizeRendering": "渲染优化",
+  "text.autoconfig.performance-optimize.option.maxParticles": "最大粒子数量",
+  "text.autoconfig.performance-optimize.option.reduceEntityRendering": "减少实体渲染",
+  "text.autoconfig.performance-optimize.option.entityRenderDistance": "实体渲染距离",
+  "text.autoconfig.performance-optimize.option.optimizeChunkLoading": "区块加载优化",
+  "text.autoconfig.performance-optimize.option.chunkLoadRadius": "区块加载半径",
+  "text.autoconfig.performance-optimize.option.lazyChunkRendering": "延迟区块渲染",
+  "text.autoconfig.performance-optimize.option.optimizeEntities": "实体优化",
+  "text.autoconfig.performance-optimize.option.maxEntitiesPerChunk": "每区块最大实体数",
+  "text.autoconfig.performance-optimize.option.optimizeMemory": "内存优化",
+  "text.autoconfig.performance-optimize.option.gcThreshold": "垃圾回收阈值",
+  "text.autoconfig.performance-optimize.option.showDebugInfo": "显示调试信息",
+  "text.autoconfig.performance-optimize.option.logPerformance": "记录性能日志",
+  "text.autoconfig.performance-optimize.option.aggressiveOptimizations": "激进优化",
+  "text.autoconfig.performance-optimize.option.threadedRendering": "多线程渲染"
+}

@@ -1,0 +1,22 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.optimize.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "EntityMixin",
+    "WorldMixin",
+    "ChunkManagerMixin",
+    "ParticleManagerMixin",
+    "RenderSystemMixin"
+  ],
+  "client": [
+    "MinecraftClientMixin",
+    "GameRendererMixin",
+    "WorldRendererMixin",
+    "ChunkBuilderMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

@@ -1,30 +1,38 @@
 {
   "schemaVersion": 1,
-  "id": "optimise",
+  "id": "performance-optimize",
   "version": "${version}",
-  "name": "Optimise",
-  "description": "A Minecraft optimization mod for Fabric 1.21.1",
+  "name": "性能优化模组",
+  "description": "Minecraft 1.21.1 全方面性能优化模组，支持GUI调试界面",
   "authors": [
-    "YourName"
+    "Mod Developer"
   ],
   "contact": {
-    "homepage": "https://github.com/yourname/optimise",
-    "sources": "https://github.com/yourname/optimise"
+    "homepage": "https://example.com/",
+    "sources": "https://github.com/example/performance-optimize"
   },
   "license": "MIT",
-  "icon": "assets/optimise/icon.png",
+  "icon": "assets/performance-optimize/icon.png",
   "environment": "*",
   "entrypoints": {
+    "client": [
+      "com.optimize.PerformanceOptimizeMod"
+    ],
     "main": [
-      "com.example.optimise.OptimiseMod"
+      "com.optimize.PerformanceOptimizeMod"
     ]
   },
   "mixins": [
-    "optimise.mixins.json"
+    "performance-optimize.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=0.15.0",
-    "fabric": "*",
-    "minecraft": "1.21.1"
+    "fabricloader": ">=0.16.5",
+    "fabric-api": "*",
+    "minecraft": "~1.21.1",
+    "java": ">=21"
+  },
+  "suggests": {
+    "modmenu": "*",
+    "cloth-config": "*"
   }
 }

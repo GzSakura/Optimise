@@ -1,0 +1,25 @@
+{
+  "modmenu.nameTranslation.performance-optimize": "Performance Optimize",
+  "modmenu.descriptionTranslation.performance-optimize": "Minecraft 1.21.1 comprehensive performance optimization mod with GUI debugging support",
+  
+  "key.performance-optimize.open_gui": "Open Performance Settings",
+  "category.performance-optimize.general": "Performance Optimize",
+  
+  "text.autoconfig.performance-optimize.title": "Performance Optimize Mod Settings",
+  "text.autoconfig.performance-optimize.option.enabled": "Enable Mod",
+  "text.autoconfig.performance-optimize.option.optimizeRendering": "Rendering Optimization",
+  "text.autoconfig.performance-optimize.option.maxParticles": "Max Particles",
+  "text.autoconfig.performance-optimize.option.reduceEntityRendering": "Reduce Entity Rendering",
+  "text.autoconfig.performance-optimize.option.entityRenderDistance": "Entity Render Distance",
+  "text.autoconfig.performance-optimize.option.optimizeChunkLoading": "Chunk Loading Optimization",
+  "text.autoconfig.performance-optimize.option.chunkLoadRadius": "Chunk Load Radius",
+  "text.autoconfig.performance-optimize.option.lazyChunkRendering": "Lazy Chunk Rendering",
+  "text.autoconfig.performance-optimize.option.optimizeEntities": "Entity Optimization",
+  "text.autoconfig.performance-optimize.option.maxEntitiesPerChunk": "Max Entities Per Chunk",
+  "text.autoconfig.performance-optimize.option.optimizeMemory": "Memory Optimization",
+  "text.autoconfig.performance-optimize.option.gcThreshold": "Garbage Collection Threshold",
+  "text.autoconfig.performance-optimize.option.showDebugInfo": "Show Debug Info",
+  "text.autoconfig.performance-optimize.option.logPerformance": "Log Performance",
+  "text.autoconfig.performance-optimize.option.aggressiveOptimizations": "Aggressive Optimizations",
+  "text.autoconfig.performance-optimize.option.threadedRendering": "Threaded Rendering"
+}
