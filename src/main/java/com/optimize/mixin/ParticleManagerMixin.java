@@ -20,18 +20,18 @@ public class ParticleManagerMixin {
         
         if (!RenderingOptimizer.shouldRenderParticle(particle)) {
             ci.cancel();
+        } else {
+            RenderingOptimizer.onParticleAdded(particle);
         }
     }
     
-    @Inject(method = "tickParticle", at = @At("HEAD"), cancellable = true)
-    private void optimizeParticleTicking(Particle particle, CallbackInfo ci) {
+    @Inject(method = "tick", at = @At("HEAD"))
+    private void optimizeParticleTicking(CallbackInfo ci) {
         if (!ModConfig.get().enabled || !ModConfig.get().optimizeRendering) {
             return;
         }
         
-        // 距离太远的粒子不更新
-        if (particle.getWorld() != null && particle.getWorld().getClosestPlayer(particle.getX(), particle.getY(), particle.getZ(), 64, false) == null) {
-            ci.cancel();
-        }
+        // 定期清理过多的粒子
+        RenderingOptimizer.cleanupParticles();
     }
 }

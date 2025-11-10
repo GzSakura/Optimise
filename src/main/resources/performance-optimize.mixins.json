@@ -3,18 +3,19 @@
   "minVersion": "0.8",
   "package": "com.optimize.mixin",
   "compatibilityLevel": "JAVA_21",
+  "plugin": "com.optimize.mixin.PerformanceOptimizeMixinPlugin",
   "mixins": [
     "EntityMixin",
     "WorldMixin",
-    "ChunkManagerMixin",
-    "ParticleManagerMixin",
-    "RenderSystemMixin"
+    "ServerWorldMixin",
+    "ParticleManagerMixin"
   ],
   "client": [
     "MinecraftClientMixin",
     "GameRendererMixin",
     "WorldRendererMixin",
-    "ChunkBuilderMixin"
+    "ChunkBuilderMixin",
+    "RenderSystemMixin"
   ],
   "injectors": {
     "defaultRequire": 1

@@ -48,8 +48,31 @@ public class RenderingOptimizer {
             return false;
         }
         
-        double distance = particle.getPos().distanceTo(client.player.getPos());
-        return distance <= 64; // 只渲染64格内的粒子
+        try {
+            // 使用反射获取粒子的x、y、z坐标
+            java.lang.reflect.Field xField = Particle.class.getDeclaredField("x");
+            java.lang.reflect.Field yField = Particle.class.getDeclaredField("y");
+            java.lang.reflect.Field zField = Particle.class.getDeclaredField("z");
+            
+            xField.setAccessible(true);
+            yField.setAccessible(true);
+            zField.setAccessible(true);
+            
+            double particleX = xField.getDouble(particle);
+            double particleY = yField.getDouble(particle);
+            double particleZ = zField.getDouble(particle);
+            
+            // 计算与玩家的距离
+            double dx = particleX - client.player.getX();
+            double dy = particleY - client.player.getY();
+            double dz = particleZ - client.player.getZ();
+            double distanceSq = dx * dx + dy * dy + dz * dz;
+            double distance = Math.sqrt(distanceSq);
+            return distance <= 64; // 只渲染64格内的粒子
+        } catch (Exception e) {
+            // 如果无法获取粒子位置，则默认渲染粒子
+            return true;
+        }
     }
     
     public static void onParticleAdded(Particle particle) {
