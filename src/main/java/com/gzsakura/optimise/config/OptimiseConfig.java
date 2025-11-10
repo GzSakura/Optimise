@@ -18,9 +18,12 @@ public class OptimiseConfig {
     public boolean enableRenderOptimizations = true;
     public int maxChunkRenderDistance = 16;
     public boolean enableEntityCulling = true;
-    public boolean showFpsOverlay = false;
+    public boolean disableAllParticles = false;
     public boolean enableSmoothLighting = true;
     public int particleQuality = 2; // 0=Minimal, 1=Decreased, 2=All
+    
+    // Auto sprint configuration// 自动疾跑配置
+    public boolean enableAutoSprint = false;
     
     public static OptimiseConfig load() {
         if (CONFIG_FILE.exists()) {

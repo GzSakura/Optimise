@@ -17,10 +17,11 @@ public class OptimiseConfigScreen extends Screen {
     private CyclingButtonWidget<Boolean> memoryOptimizationsButton;
     private CyclingButtonWidget<Boolean> renderOptimizationsButton;
     private CyclingButtonWidget<Boolean> entityCullingButton;
-    private CyclingButtonWidget<Boolean> fpsOverlayButton;
+    private CyclingButtonWidget<Boolean> disableParticlesButton;
     private CyclingButtonWidget<Boolean> smoothLightingButton;
     private TextFieldWidget renderDistanceField;
     private CyclingButtonWidget<Integer> particleQualityButton;
+    private CyclingButtonWidget<Boolean> autoSprintButton;
     
     public OptimiseConfigScreen(Screen parent) {
         super(Text.translatable("optimise.config.title"));
@@ -66,15 +67,15 @@ public class OptimiseConfigScreen extends Screen {
                 (button, value) -> config.enableEntityCulling = value);
         this.addDrawableChild(this.entityCullingButton);
         
-        // FPS显示选项
-        this.fpsOverlayButton = CyclingButtonWidget.builder((Boolean value) -> 
+        // 禁用粒子选项
+        this.disableParticlesButton = CyclingButtonWidget.builder((Boolean value) -> 
                 value ? Text.translatable("options.on") : Text.translatable("options.off"))
             .values(true, false)
-            .initially(config.showFpsOverlay)
+            .initially(config.disableAllParticles)
             .build(centerX - 100, startY + spacing * 3, 200, buttonHeight, 
-                Text.translatable("optimise.config.fps_overlay"), 
-                (button, value) -> config.showFpsOverlay = value);
-        this.addDrawableChild(this.fpsOverlayButton);
+                Text.translatable("optimise.config.disable_particles"), 
+                (button, value) -> config.disableAllParticles = value);
+        this.addDrawableChild(this.disableParticlesButton);
         
         // 平滑光照选项
         this.smoothLightingButton = CyclingButtonWidget.builder((Boolean value) -> 
@@ -110,6 +111,24 @@ public class OptimiseConfigScreen extends Screen {
                 (button, value) -> config.particleQuality = value);
         this.addDrawableChild(this.particleQualityButton);
         
+        // 自动疾跑选项
+        this.autoSprintButton = CyclingButtonWidget.builder((Boolean value) -> 
+                value ? Text.translatable("options.on") : Text.translatable("options.off"))
+            .values(true, false)
+            .initially(config.enableAutoSprint)
+            .build(centerX - 100, startY + spacing * 7, 200, buttonHeight, 
+                Text.translatable("optimise.config.auto_sprint"), 
+                (button, value) -> {
+                    config.enableAutoSprint = value;
+                    // 重新初始化自动疾跑管理器
+                    if (value) {
+                        com.gzsakura.optimise.client.AutoSprintManager.init();
+                    } else {
+                        com.gzsakura.optimise.client.AutoSprintManager.setAutoSprintActive(false);
+                    }
+                });
+        this.addDrawableChild(this.autoSprintButton);
+        
         // 保存按钮
         this.addDrawableChild(ButtonWidget.builder(Text.translatable("optimise.config.save"), button -> {
             saveConfig();
@@ -130,9 +149,10 @@ public class OptimiseConfigScreen extends Screen {
         config.enableMemoryOptimizations = this.memoryOptimizationsButton.getValue();
         config.enableRenderOptimizations = this.renderOptimizationsButton.getValue();
         config.enableEntityCulling = this.entityCullingButton.getValue();
-        config.showFpsOverlay = this.fpsOverlayButton.getValue();
+        config.disableAllParticles = this.disableParticlesButton.getValue();
         config.enableSmoothLighting = this.smoothLightingButton.getValue();
         config.particleQuality = this.particleQualityButton.getValue();
+        config.enableAutoSprint = this.autoSprintButton.getValue();
         
         // 解析渲染距离
         try {
@@ -148,6 +168,7 @@ public class OptimiseConfigScreen extends Screen {
         
         // 保存到文件
         config.save();
+        OptimiseModClient.LOGGER.info("Configuration saved, disable particles: {}", config.disableAllParticles);
     }
     
     @Override

@@ -24,6 +24,7 @@ public class OptimiseModClient implements ClientModInitializer {
         // Load configuration
         CONFIG = OptimiseConfig.load();
         LOGGER.info("Client configuration loaded successfully!");
+        LOGGER.info("Particles disabled: {}", CONFIG.disableAllParticles);
         
         // Apply client-side optimizations based on config
         if (CONFIG.enableRenderOptimizations) {
@@ -36,6 +37,12 @@ public class OptimiseModClient implements ClientModInitializer {
         
         // Register key bindings
         OptimiseKeyBindings.register();
+        
+        // Initialize auto sprint
+        if (CONFIG.enableAutoSprint) {
+            com.gzsakura.optimise.client.AutoSprintManager.init();
+            LOGGER.info("Auto sprint enabled!");
+        }
         
         LOGGER.info("Optimise client mod initialization completed!");
     }

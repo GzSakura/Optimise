@@ -1,22 +1,37 @@
 {
   "key.categories.optimise": "Optimise Mod",
   "key.optimise.open_config": "打开配置界面",
-  
+  "optimise.key.open_module_manager": "打开模块管理器",
+
   "optimise.config.title": "Optimise Mod 配置",
   "optimise.config.memory_optimizations": "内存优化",
-  "optimise.config.render_optimizations": "渲染优化", 
+  "optimise.config.render_optimizations": "渲染优化",
   "optimise.config.entity_culling": "实体剔除",
-  "optimise.config.fps_overlay": "FPS显示",
+  "optimise.config.disable_particles": "禁用粒子",
   "optimise.config.smooth_lighting": "平滑光照",
   "optimise.config.render_distance": "渲染距离 (2-32):",
   "optimise.config.particle_quality": "粒子质量",
   "optimise.config.particle_quality.minimal": "极简",
   "optimise.config.particle_quality.decreased": "减少",
   "optimise.config.particle_quality.all": "全部",
+  "optimise.config.auto_sprint": "自动疾跑",
   "optimise.config.save": "保存配置",
   "optimise.config.back": "返回",
-  
+
   "optimise.messages.config_saved": "Optimise mod配置已保存",
   "optimise.messages.gui_opened": "Optimise mod配置界面已打开",
-  "optimise.messages.invalid_render_distance": "无效的渲染距离值"
+  "optimise.messages.invalid_render_distance": "无效的渲染距离值",
+
+  "optimise.module_manager.title": "模块管理器",
+  "optimise.module_manager.enabled": "已启用",
+  "optimise.module_manager.disabled": "已禁用",
+  "optimise.module_manager.save": "保存",
+  "optimise.module_manager.reset": "重置",
+  "optimise.module_manager.back": "返回",
+  "optimise.module_manager.status": "状态",
+  "optimise.module_manager.modules": "模块",
+  "optimise.module_manager.statistics": "统计信息",
+  "optimise.module_manager.total_modules": "总模块数: %d",
+  "optimise.module_manager.enabled_modules": "已启用: %d",
+  "optimise.module_manager.disabled_modules": "已禁用: %d"
 }
